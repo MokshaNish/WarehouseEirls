@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequestMapping("/goodReceivedNotice")
 public class GoodReceivedNoticeController {
 
-    private GoodReceivedNoticeRepository goodReceivedNoticeRepo;
+     GoodReceivedNoticeRepository goodReceivedNoticeRepo;
 
 
     @GetMapping("/{id}")
@@ -28,6 +28,11 @@ public class GoodReceivedNoticeController {
     @PostMapping
     public GoodReceivedNotice add(@RequestBody GoodReceivedNotice goodReceivedNotice){
         return goodReceivedNoticeRepo.save(goodReceivedNotice);
+    }
+
+    @PostMapping("/save-list")
+    public List<GoodReceivedNotice> addAll(@RequestBody List<GoodReceivedNotice> goodReceivedNotice){
+        return goodReceivedNoticeRepo.saveAll(goodReceivedNotice);
     }
 
     @DeleteMapping("/{id}")
