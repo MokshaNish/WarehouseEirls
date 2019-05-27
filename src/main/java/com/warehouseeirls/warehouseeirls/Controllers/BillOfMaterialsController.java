@@ -30,6 +30,10 @@ public class BillOfMaterialsController {
     public BillOfMaterials add(@RequestBody BillOfMaterials masterStockRecord){
         return billOfMaterialsRepo.save(masterStockRecord);
     }
+    @PostMapping("/save-list")
+    public List<BillOfMaterials> addAll(@RequestBody List<BillOfMaterials> bom){
+        return billOfMaterialsRepo.saveAll(bom);
+    }
 
     @PutMapping
     public BillOfMaterials update(@RequestBody BillOfMaterials bom){
