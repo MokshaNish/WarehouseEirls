@@ -25,13 +25,9 @@ public class GoodReceivedNoticeController {
         return goodReceivedNoticeRepo.findAll();
     }
 
-    @PostMapping
-    public GoodReceivedNotice add(@RequestBody GoodReceivedNotice goodReceivedNotice){
-        return goodReceivedNoticeRepo.save(goodReceivedNotice);
-    }
 
-    @PostMapping("/save-list")
-    public List<GoodReceivedNotice> addAll(@RequestBody List<GoodReceivedNotice> goodReceivedNotice){
+    @PostMapping
+    public List<GoodReceivedNotice> addGoodItems(@RequestBody List<GoodReceivedNotice> goodReceivedNotice){
         return goodReceivedNoticeRepo.saveAll(goodReceivedNotice);
     }
 

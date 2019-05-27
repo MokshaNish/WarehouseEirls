@@ -13,7 +13,7 @@ public class GoodReceivedNotice {
     private int id;
     private int itemId;
     private String itemName;
-    private int qunatity;
+    private int quantity;
     private int binId;
 
     public int getBinId() {
@@ -48,11 +48,11 @@ public class GoodReceivedNotice {
         this.itemName = itemName;
     }
 
-    public int getQunatity() {
-        return qunatity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQunatity(int qunatity) {
-        this.qunatity = qunatity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

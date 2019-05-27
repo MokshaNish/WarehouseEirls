@@ -33,6 +33,14 @@ public class BillOfMaterials {
         this.itemId = itemId;
     }
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
     public int getQuantity() {
         return quantity;
     }
@@ -41,3 +49,4 @@ public class BillOfMaterials {
         this.quantity = quantity;
     }
 }
+

@@ -26,12 +26,9 @@ public class BillOfMaterialsController {
         return billOfMaterialsRepo.findAll();
     }
 
+
     @PostMapping
-    public BillOfMaterials add(@RequestBody BillOfMaterials masterStockRecord){
-        return billOfMaterialsRepo.save(masterStockRecord);
-    }
-    @PostMapping("/save-list")
-    public List<BillOfMaterials> addAll(@RequestBody List<BillOfMaterials> bom){
+    public List<BillOfMaterials> recordBOMDetails(@RequestBody List<BillOfMaterials> bom){
         return billOfMaterialsRepo.saveAll(bom);
     }
 
