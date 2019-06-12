@@ -11,11 +11,20 @@ public class ShippingNote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int orderItemId;
     private int itemId;
     private int quantity;
     private String shippingAddress;
     private String shippingMode;
     private String status;
+
+    public int getOrderItemId() {
+        return orderItemId;
+    }
+
+    public void setOrderItemId(int orderItemId) {
+        this.orderItemId = orderItemId;
+    }
 
     public int getId() {
         return id;

@@ -12,27 +12,28 @@ import java.util.Optional;
 @RequestMapping("/goodReceivedNotice")
 public class GoodReceivedNoticeController {
 
-     GoodReceivedNoticeRepository goodReceivedNoticeRepo;
+    @Autowired
+    GoodReceivedNoticeRepository goodReceivedNoticeRepo;
 
 
     @GetMapping("/{id}")
-    public Optional<GoodReceivedNotice> get(@PathVariable int id){
+    public Optional<GoodReceivedNotice> get(@PathVariable int id) {
         return goodReceivedNoticeRepo.findById(id);
     }
 
     @GetMapping
-    public List<GoodReceivedNotice> getAll(){
+    public List<GoodReceivedNotice> getAll() {
         return goodReceivedNoticeRepo.findAll();
     }
 
 
     @PostMapping
-    public List<GoodReceivedNotice> addGoodItems(@RequestBody List<GoodReceivedNotice> goodReceivedNotice){
+    public List<GoodReceivedNotice> addGoodItems(@RequestBody List<GoodReceivedNotice> goodReceivedNotice) {
         return goodReceivedNoticeRepo.saveAll(goodReceivedNotice);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable int id) {
         goodReceivedNoticeRepo.deleteById(id);
     }
 }
