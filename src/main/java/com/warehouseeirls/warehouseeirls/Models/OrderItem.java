@@ -1,5 +1,7 @@
 package com.warehouseeirls.warehouseeirls.Models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +14,18 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+  //  @JsonAlias("prd_id")
     private int itemId;
+
+   // @JsonAlias("prd_id")
     private String itemName;
+
+
+   // @JsonAlias("prd_id")
     private String quantity;
+
+  //  @JsonAlias("prd_id")
     private String status;
 
     public String getStatus() {

@@ -1,5 +1,7 @@
 package com.warehouseeirls.warehouseeirls.Models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,7 @@ public class BillOfMaterials {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    //@JsonAlias("iID")
     private int itemId;
     private String itemName;
     private int quantity;

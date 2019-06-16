@@ -14,7 +14,7 @@ public class MasterStockRecord {
     private String itemName;
     private int binId;
     private int quantity;
-    private String status = "available";
+    private String status;
 
     public int getId() {
         return id;

@@ -1,5 +1,7 @@
 package com.warehouseeirls.warehouseeirls.Models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,20 +13,16 @@ public class ShippingNote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @JsonAlias("ord_id")
     private int orderItemId;
-    private int itemId;
-    private int quantity;
+//    private int itemId;
+//    private int quantity;
+    @JsonAlias("address")
     private String shippingAddress;
-    private String shippingMode;
-    private String status;
+    //private String shippingMode;
+    //private String status;
 
-    public int getOrderItemId() {
-        return orderItemId;
-    }
-
-    public void setOrderItemId(int orderItemId) {
-        this.orderItemId = orderItemId;
-    }
 
     public int getId() {
         return id;
@@ -34,20 +32,12 @@ public class ShippingNote {
         this.id = id;
     }
 
-    public int getItemId() {
-        return itemId;
+    public int getOrderItemId() {
+        return orderItemId;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setOrderItemId(int orderItemId) {
+        this.orderItemId = orderItemId;
     }
 
     public String getShippingAddress() {
@@ -56,21 +46,5 @@ public class ShippingNote {
 
     public void setShippingAddress(String shippingAddress) {
         this.shippingAddress = shippingAddress;
-    }
-
-    public String getShippingMode() {
-        return shippingMode;
-    }
-
-    public void setShippingMode(String shippingMode) {
-        this.shippingMode = shippingMode;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

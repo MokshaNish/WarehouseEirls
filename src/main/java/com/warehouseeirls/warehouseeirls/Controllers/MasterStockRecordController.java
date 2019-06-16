@@ -1,6 +1,8 @@
 package com.warehouseeirls.warehouseeirls.Controllers;
 
+import com.warehouseeirls.warehouseeirls.Models.ItemDetail;
 import com.warehouseeirls.warehouseeirls.Models.MasterStockRecord;
+import com.warehouseeirls.warehouseeirls.Repositories.ItemDetailRepository;
 import com.warehouseeirls.warehouseeirls.Repositories.MasterStockRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,11 @@ public class MasterStockRecordController {
     @PostMapping
     public MasterStockRecord add(@RequestBody MasterStockRecord masterStockRecord){
         return masterStockRecordRepo.save(masterStockRecord);
+    }
+
+    @PostMapping("/saveAll")
+    public List<MasterStockRecord> addAllGoods(@RequestBody List<MasterStockRecord> allGoods){
+        return masterStockRecordRepo.saveAll(allGoods);
     }
 
     @PutMapping
